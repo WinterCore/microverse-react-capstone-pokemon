@@ -30,9 +30,8 @@
 
 .contentSection > h3 {
   margin-bottom: 16px;
-  color: #850D0A;
+  color: #850d0a;
 }
-
 
 @media (max-width: 768px) {
   .container {

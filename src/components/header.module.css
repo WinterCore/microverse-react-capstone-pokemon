@@ -1,7 +1,7 @@
 .descriptionBar {
   width: 100%;
-  background: #339A99;
-  color: #FFF;
+  background: #339a99;
+  color: #fff;
 }
 
 .topHeader {
@@ -15,7 +15,7 @@
 }
 
 .sign {
-  background: #DE6C51;
+  background: #de6c51;
   width: 120px;
   position: absolute;
   left: 0;
