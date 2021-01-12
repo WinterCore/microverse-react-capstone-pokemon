@@ -1,4 +1,4 @@
-import React from 'react';
+import React      from 'react';
 import classnames from 'classnames';
 
 import PokemonView from '../components/pokemon';

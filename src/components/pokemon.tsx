@@ -1,8 +1,8 @@
-import { createMatchSelector, RouterRootState }              from 'connected-react-router';
-import React                            from 'react';
-import { bindActionCreators, Dispatch } from 'redux';
-import { connect }                      from 'react-redux';
-import { Link, match }                         from 'react-router-dom';
+import { createMatchSelector, RouterRootState } from 'connected-react-router';
+import React                                    from 'react';
+import { bindActionCreators, Dispatch }         from 'redux';
+import { connect }                              from 'react-redux';
+import { Link, match }                          from 'react-router-dom';
 
 import { PokemonState } from '../store/pokemon/index';
 import { fetch }        from '../store/pokemon/actions';
