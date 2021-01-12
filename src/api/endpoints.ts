@@ -2,7 +2,7 @@ import { AxiosRequestConfig } from 'axios';
 
 type ARC = AxiosRequestConfig;
 
-export const API_URL = 'https://pokeapi.co/api/v2/type';
+export const API_URL = 'https://pokeapi.co/api/v2';
 
 export const GET_TYPES   = (): ARC => ({ method: 'GET', url: '/type' });
 export const GET_TYPE    = (id: number): ARC => ({ method: 'GET', url : `/type/${id}` });
