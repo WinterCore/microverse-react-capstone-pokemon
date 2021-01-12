@@ -1,4 +1,4 @@
-import { Pokemon, PaginatedResource } from './models';
+import { Pokemon, PaginatedResource, PokemonType } from './models';
 
 export type NamedApiResponse = {
     url  : string;
@@ -7,4 +7,4 @@ export type NamedApiResponse = {
 
 export type GetPokemonTypesResponse = PaginatedResource<NamedApiResponse[]>;
 export type GetPokemonResponse      = Pokemon;
-
+export type GetPokemonTypeResponse  = PokemonType<NamedApiResponse>;

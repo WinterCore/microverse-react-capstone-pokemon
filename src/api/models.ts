@@ -10,10 +10,10 @@ export type Pokemon = {
     sprites : { 'official-artwork': { front_default: string } }
 };
 
-export type PokemonType = {
+export type PokemonType<T> = {
     id      : number;
     name    : string;
-    pokemon : { pokemon: NamedApiResource }[]
+    pokemon : { pokemon: T }[]
 };
 
 export type PaginatedResource<T> = {
