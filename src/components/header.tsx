@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import styles     from './header.module.css';
 import utilStyles from '../utility.module.css';
 
+import logo from '../assets/pokeball.png';
+
 const Header: React.FC = () => {
     return (
         <header>
@@ -11,11 +13,9 @@ const Header: React.FC = () => {
                 <div className={ classnames(utilStyles.container, styles.topHeader) }>
                     Welcome to Pokemonipedia, where you can view pokemon types and look at pokemons.
                     <div
-                        className={
-                            classnames(utilStyles.flex, utilStyles.column, utilStyles.justifyCenter, utilStyles.alignCenter, styles.sign)
-                        }
+                        className={ classnames(utilStyles.flex, utilStyles.column, utilStyles.justifyCenter, utilStyles.alignCenter, styles.sign) }
                     >
-                        <img src="/assets/pokeball.png" />
+                        <img alt="logo" src={ logo } />
                         <div className={ styles.signText }>Pokipedia</div>
                     </div>
                 </div>

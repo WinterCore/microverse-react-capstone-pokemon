@@ -1,12 +1,10 @@
-import { NamedApiResource } from './models';
+import { Pokemon, PaginatedResource } from './models';
 
-export type PaginatedResponse = {
-    count    : number;
-    next     : null | string;
-    previous : null | string;
+export type NamedApiResponse = {
+    url  : string;
+    name : string;
 };
 
-
-export type GetTypesResponse = NamedApiResource;
-
+export type GetPokemonTypesResponse = PaginatedResource<NamedApiResponse[]>;
+export type GetPokemonResponse      = Pokemon;
 

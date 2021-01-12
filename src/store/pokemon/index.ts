@@ -1,11 +1,11 @@
 import { Reducer } from 'redux';
 
-import { Pokemon }          from '../../api/models';
-import { ApiResourceState } from '../utils';
+import { GetPokemonResponse } from '../../api/responses';
+import { ApiResourceState }   from '../utils';
 
 import { FETCH_POKEMON, FETCH_POKEMON_ERROR, FETCH_POKEMON_SUCCESS, ActionUnion } from './actions';
 
-export type PokemonState = ApiResourceState<Pokemon | null>;
+export type PokemonState = ApiResourceState<GetPokemonResponse | null>;
 
 const INITIAL_STATE = {
     data      : null,

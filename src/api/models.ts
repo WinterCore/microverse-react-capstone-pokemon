@@ -1,6 +1,6 @@
 export type NamedApiResource = {
+    id   : number;
     name : string;
-    url  : string;
 };
 
 export type Pokemon = {
@@ -14,4 +14,11 @@ export type PokemonType = {
     id      : number;
     name    : string;
     pokemon : { pokemon: NamedApiResource }[]
+};
+
+export type PaginatedResource<T> = {
+    count    : number;
+    next     : null | string;
+    previous : null | string;
+    results  : T;
 };

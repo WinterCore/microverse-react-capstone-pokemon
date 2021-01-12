@@ -81,3 +81,7 @@
 .bannerTitle.red {
   background: #A40A14;
 }
+
+.mr1 { margin-right: 6px; }
+.mr2 { margin-right: 12px; }
+.mr3 { margin-right: 24px; }

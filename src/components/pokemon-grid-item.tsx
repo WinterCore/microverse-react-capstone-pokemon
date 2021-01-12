@@ -1,9 +1,10 @@
-import React      from 'react';
-import classnames from 'classnames';
+import React       from 'react';
+import classnames  from 'classnames';
+import { connect } from 'react-redux';
 
 import utilStyles from '../utility.module.css';
 
-const Pokemon: React.FC = () => {
+const Pokemon: React.FC = (props) => {
     return (
         <div className={ utilStyles.card }>
             <h2 className={ utilStyles.cardTitle }>Charazard</h2>
@@ -15,4 +16,4 @@ const Pokemon: React.FC = () => {
     );
 };
 
-export default Pokemon;
+export default connect(state => state)(Pokemon);
