@@ -6,12 +6,12 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { RouterRootState }              from 'connected-react-router';
 import queryString                      from 'query-string';
 
-import Loader from './loader';
-
 import { NamedApiResource }  from '../api/models';
 import { InitialState }      from '../store/root';
 import { PokemonTypesState } from '../store/pokemon-types/index';
 import { fetch }             from '../store/pokemon-types/actions';
+
+import ApiResourceRenderer from './api-resource-renderer';
 
 import styles     from './filter.module.css';
 import utilStyles from '../utility.module.css';
@@ -33,7 +33,7 @@ type FilterItemProps = NamedApiResource & {
     active: number;
 };
 
-const Filter: React.FC<FilterProps> = ({ types: { isLoading, data }, fetchTypes, router }) => {
+const Filter: React.FC<FilterProps> = ({ types: { isLoading, data, error }, fetchTypes, router }) => {
     React.useEffect(() => { fetchTypes() }, [fetchTypes]);
 
     const type = +(queryString.parse(router.location.search).type as string) || -1;
@@ -41,18 +41,20 @@ const Filter: React.FC<FilterProps> = ({ types: { isLoading, data }, fetchTypes,
     return (
         <div>
             <h2 className={ classnames(utilStyles.bannerTitle, utilStyles.green) }>Types</h2>
-            {
-                !isLoading && data
-                    ? (
-                        <div className={ styles.listContainer }>
-                            {
-                                [{ id: -1, name: 'All' }, ...data.results]
-                                    .map((props) => <FilterItem key={ props.id } active={ type } { ...props } />)
-                            }
-                        </div>
-                    )
-                    : <Loader width="50%" />
-            }
+            <ApiResourceRenderer
+                isLoading={ isLoading }
+                loaderWidth="50%"
+                empty={ !data || data.results.length === 0 }
+                error={ error }
+                render={() => (
+                    <div className={ styles.listContainer }>
+                        {
+                            [{ id: -1, name: 'All' }, ...data!.results]
+                                .map((props) => <FilterItem key={ props.id } active={ type } { ...props } />)
+                        }
+                    </div>
+                )}
+            />
         </div>
     );
 };
