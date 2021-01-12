@@ -12,7 +12,7 @@ const PokemonGridItem: React.FC<PokemonGridItemProps> = ({ id, name }) => {
     return (
         <div className={ utilStyles.card }>
             <h2 className={ utilStyles.cardTitle }>{ capitalize(name) }</h2>
-            <img src={ POKEMON_ART_BASE_URL(id) } />
+            <img alt={ name } src={ POKEMON_ART_BASE_URL(id) } />
             <div className={ classnames(utilStyles.cardFooter, utilStyles.flex, utilStyles.justifyCenter) }>
                 <button className={ utilStyles.button }>More Info</button>
             </div>

@@ -16,7 +16,7 @@ import utilStyles from '../utility.module.css';
 const PokemonGrid: React.FC<PokemonGridProps> = ({ type: { isLoading, data, error }, fetchType, router }) => {
     const type = +(queryString.parse(router.location.search).type as string) || -1;
 
-    React.useEffect(() => fetchType(type), [type]);
+    React.useEffect(() => fetchType(type), [type, fetchType]);
 
     return (
         <ApiResourceRenderer

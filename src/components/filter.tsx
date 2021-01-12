@@ -34,7 +34,7 @@ type FilterItemProps = NamedApiResource & {
 };
 
 const Filter: React.FC<FilterProps> = ({ types: { isLoading, data }, fetchTypes, router }) => {
-    React.useEffect(() => { fetchTypes() }, []);
+    React.useEffect(() => { fetchTypes() }, [fetchTypes]);
 
     const type = +(queryString.parse(router.location.search).type as string) || -1;
 
