@@ -2,13 +2,17 @@ import React       from 'react';
 import classnames  from 'classnames';
 import { connect } from 'react-redux';
 
+import { POKEMON_ART_BASE_URL } from '../api';
+import { NamedApiResource }     from '../api/models';
+import { capitalize }           from '../utils';
+
 import utilStyles from '../utility.module.css';
 
-const Pokemon: React.FC = (props) => {
+const PokemonGridItem: React.FC<PokemonGridItemProps> = ({ id, name }) => {
     return (
         <div className={ utilStyles.card }>
-            <h2 className={ utilStyles.cardTitle }>Charazard</h2>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" />
+            <h2 className={ utilStyles.cardTitle }>{ capitalize(name) }</h2>
+            <img src={ POKEMON_ART_BASE_URL(id) } />
             <div className={ classnames(utilStyles.cardFooter, utilStyles.flex, utilStyles.justifyCenter) }>
                 <button className={ utilStyles.button }>More Info</button>
             </div>
@@ -16,4 +20,6 @@ const Pokemon: React.FC = (props) => {
     );
 };
 
-export default connect(state => state)(Pokemon);
+type PokemonGridItemProps = NamedApiResource & {};
+
+export default connect(state => state)(PokemonGridItem);

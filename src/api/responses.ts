@@ -7,4 +7,5 @@ export type NamedApiResponse = {
 
 export type GetPokemonTypesResponse = PaginatedResource<NamedApiResponse[]>;
 export type GetPokemonResponse      = Pokemon;
+export type GetPokemonsResponse     = PaginatedResource<NamedApiResponse[]>;
 export type GetPokemonTypeResponse  = PokemonType<NamedApiResponse>;

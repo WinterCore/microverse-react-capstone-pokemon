@@ -17,7 +17,7 @@
 
 .itemsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .relative { position: relative }
@@ -40,6 +40,7 @@
 .card {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  margin: 5px;
 }
 
 .cardTitle {
@@ -80,6 +81,18 @@
 
 .bannerTitle.red {
   background: #A40A14;
+}
+
+.errorHeading,
+.infoHeading {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.errorHeading {
+  color: red;
 }
 
 .mr1 { margin-right: 6px; }
