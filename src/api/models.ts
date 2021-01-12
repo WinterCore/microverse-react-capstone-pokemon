@@ -7,7 +7,8 @@ export type Pokemon = {
     id      : number;
     name    : string;
     height  : number;
-    sprites : { 'official-artwork': { front_default: string } }
+    types   : { type: { name: string; url: string; }; }[];
+    stats   : { base_stat: number; stat: { name: string; }; }[];
 };
 
 export type PokemonType<T> = {
