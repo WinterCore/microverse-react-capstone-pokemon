@@ -136,6 +136,28 @@
   color: #fff;
 }
 
+.select {
+  padding: 6px;
+  background: #a40a14;
+  border: none;
+  color: #fff;
+  outline: 0;
+}
+
+.bold { font-weight: bold; }
+
 .mr1 { margin-right: 6px; }
 .mr2 { margin-right: 12px; }
 .mr3 { margin-right: 24px; }
+
+.ml1 { margin-left: 6px; }
+.ml2 { margin-left: 12px; }
+.ml3 { margin-left: 24px; }
+
+.mb1 { margin-bottom: 6px; }
+.mb2 { margin-bottom: 12px; }
+.mb3 { margin-bottom: 24px; }
+
+.mt1 { margin-top: 6px; }
+.mt2 { margin-top: 12px; }
+.mt3 { margin-top: 24px; }
