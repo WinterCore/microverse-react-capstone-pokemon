@@ -1,4 +1,5 @@
-import { PaginatedResource, Pokemon } from '../api/models';
+import { NamedApiResource, PaginatedResource, Pokemon } from '../api/models';
+import {NamedApiResponse} from '../api/responses';
 
 export const pokemon: Pokemon = {
     id     : 1,
@@ -16,3 +17,15 @@ export const paginatedResponse = <T>(data: T): PaginatedResource<T> => {
         results  : data
     };
 };
+
+export const pokemonTypesResponse: NamedApiResponse[] = [
+    { url: '/type/1', name: 'dummytype1' },
+    { url: '/type/2', name: 'dummytype2' },
+    { url: '/type/3', name: 'dummytype3' },
+];
+
+export const pokemonTypesResource: NamedApiResource[] = [
+    { id: 1, name: 'dummytype1' },
+    { id: 2, name: 'dummytype2' },
+    { id: 3, name: 'dummytype3' },
+];
