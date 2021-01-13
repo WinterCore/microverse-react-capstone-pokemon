@@ -11,7 +11,7 @@ const api = Axios.create({
 
 export const extractIdFromUrl = (urlType: string, str: string): number => {
     const idx = str.indexOf(urlType);
-    const match  = /\/(?<id>\d+)\/?/.exec(str.slice(idx + urlType.length));
+    const match  = /^\/(?<id>\d+)\/?/.exec(str.slice(idx + urlType.length));
     if (!match || !match.groups) {
         return -1;
     }
