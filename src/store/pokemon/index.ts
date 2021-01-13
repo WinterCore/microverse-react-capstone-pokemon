@@ -7,7 +7,7 @@ import { FETCH_POKEMON, FETCH_POKEMON_ERROR, FETCH_POKEMON_SUCCESS, ActionUnion 
 
 export type PokemonState = ApiResourceState<GetPokemonResponse | null>;
 
-const INITIAL_STATE = {
+export const INITIAL_STATE: PokemonState = {
     data      : null,
     isLoading : false,
     error     : null,

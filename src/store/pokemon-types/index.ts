@@ -7,7 +7,7 @@ import { FETCH_POKEMON_TYPES, FETCH_POKEMON_TYPES_ERROR, FETCH_POKEMON_TYPES_SUC
 
 export type PokemonTypesState = ApiResourceState<PaginatedResource<NamedApiResource[]>  | null> ;
 
-const INITIAL_STATE = {
+export const INITIAL_STATE: PokemonTypesState = {
     data      : null,
     isLoading : false,
     error     : null,
