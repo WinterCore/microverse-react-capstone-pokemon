@@ -4,7 +4,7 @@ import styles from './loader.module.css';
 
 const Loader: React.FC<LoaderProps> = ({ color = '#FDCD5E', width = '100%' }) => {
     return (
-        <div className={ styles.loaderContainer }>
+        <div data-testid="loader" className={ styles.loaderContainer }>
             <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"

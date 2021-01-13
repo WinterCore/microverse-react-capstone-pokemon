@@ -25,7 +25,7 @@ type ApiResourceRendererProps = {
     loaderWidth : string | number;
     error       : string | null;
     empty       : boolean;
-    render      : () => React.ReactElement;
+    render      : () => React.ReactElement | null;
 };
 
 export default ApiResourceRenderer;
