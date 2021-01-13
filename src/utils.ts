@@ -14,3 +14,12 @@ export const pokemonSorter = (pokemons: NamedApiResource[], filter: SortFilter) 
         return pokemons;
     }
 };
+
+export const extractIdFromUrl = (urlType: string, str: string): number => {
+    const idx = str.indexOf(urlType);
+    const match  = /^\/(?<id>\d+)\/?/.exec(str.slice(idx + urlType.length));
+    if (!match || !match.groups) {
+        return -1;
+    }
+    return +match.groups.id;
+};

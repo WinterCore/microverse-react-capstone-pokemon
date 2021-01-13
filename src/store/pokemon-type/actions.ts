@@ -1,10 +1,11 @@
 import { Dispatch }      from 'redux';
 import { AxiosResponse } from 'axios';
 
-import Api, { extractIdFromUrl, GET_TYPE, GET_POKEMONS } from '../../api/index';
-import { createAction }                                  from '../utils';
-import { GetPokemonsResponse, GetPokemonTypeResponse }   from '../../api/responses';
-import { NamedApiResource, PokemonType }                 from '../../api/models';
+import Api, { GET_TYPE, GET_POKEMONS }                 from '../../api/index';
+import { createAction }                                from '../utils';
+import { GetPokemonsResponse, GetPokemonTypeResponse } from '../../api/responses';
+import { NamedApiResource, PokemonType }               from '../../api/models';
+import { extractIdFromUrl }                            from '../../utils';
 
 export const FETCH_POKEMON_TYPE         = 'FETCH_POKEMON_TYPE';
 export const FETCH_POKEMON_TYPE_ERROR   = 'FETCH_POKEMON_TYPE_ERROR';

@@ -10,9 +10,9 @@ import { InitialState } from '../store/root';
 
 import ApiResourceRenderer from './api-resource-renderer';
 
-import { extractIdFromUrl, POKEMON_ART_BASE_URL } from '../api';
+import { POKEMON_ART_BASE_URL } from '../api';
 
-import { capitalize } from '../utils';
+import { extractIdFromUrl, capitalize } from '../utils';
 
 import styles     from './pokemon.module.css';
 import utilStyles from '../utility.module.css';

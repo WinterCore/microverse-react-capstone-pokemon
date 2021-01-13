@@ -1,10 +1,11 @@
 import { Dispatch }      from 'redux';
 import { AxiosResponse } from 'axios';
 
-import Api, { extractIdFromUrl, GET_TYPES }    from '../../api/index';
+import Api, { GET_TYPES }                      from '../../api/index';
 import { createAction }                        from '../utils';
 import { GetPokemonTypesResponse }             from '../../api/responses';
 import { NamedApiResource, PaginatedResource } from '../../api/models';
+import { extractIdFromUrl }                    from '../../utils';
 
 export const FETCH_POKEMON_TYPES         = 'FETCH_POKEMON_TYPES';
 export const FETCH_POKEMON_TYPES_ERROR   = 'FETCH_POKEMON_TYPES_ERROR';
