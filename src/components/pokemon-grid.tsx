@@ -7,7 +7,7 @@ import queryString                      from 'query-string';
 import { PokemonTypeState } from '../store/pokemon-type/index';
 import { fetch }            from '../store/pokemon-type/actions';
 import { InitialState }     from '../store/root';
-import { FilterState, SortFilter }      from '../store/filter';
+import { FilterState }      from '../store/filter';
 
 import PokemonGridItem     from './pokemon-grid-item';
 import ApiResourceRenderer from './api-resource-renderer';
