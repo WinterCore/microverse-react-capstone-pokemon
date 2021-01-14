@@ -68,6 +68,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Microverse
+- Denys Chagaida for the [design](https://www.behance.net/gallery/24531031/Pimp-my-DOG-Online-store-E-commerse-project) inspriation.
 
 ## License
 
