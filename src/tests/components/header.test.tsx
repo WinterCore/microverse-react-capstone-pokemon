@@ -3,7 +3,6 @@ import { MemoryRouter }   from 'react-router-dom';
 
 import Header from '../../components/header';
 
-
 describe('Header Component', () => {
     test('Renders the correct content', () => {
         render(<Header />, { wrapper: MemoryRouter });
