@@ -30,7 +30,7 @@ const PokemonGrid: React.FC<PokemonGridProps> = ({ type: { isLoading, data, erro
                 const pokemons = pokemonSorter(data!.pokemon.slice(0, 20).map(x => x.pokemon), filter.sort);
 
                 return (
-                    <div className={ utilStyles.itemsGrid }>
+                    <div data-testid="pokemonsGrid" className={ utilStyles.itemsGrid }>
                         { pokemons.map((pokemon) => <PokemonGridItem key={ pokemon.id } { ...pokemon } />) }
                     </div>
                 );
