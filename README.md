@@ -1,4 +1,4 @@
-# React Calculator
+# Pokepedia
 
 > Pokepedia is encyclopedia for pokemons
 
@@ -6,7 +6,7 @@
 
 ## Table Of Contents
 
-- [React Calculator](#react-calculator)
+- [Pokepedia](#pokepedia)
   - [Table Of Contents](#table-of-contents)
   - [Built With](#built-with)
   - [How to run locally](#how-to-run-locally)
@@ -46,7 +46,7 @@
  
 ## Live Demo 
 
-[Live Demo Link]()
+[Live Demo Link](https://pokepedia.upperdown.me)
 
 
 ## Authors
