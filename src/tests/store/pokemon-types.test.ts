@@ -54,7 +54,7 @@ describe('Pokmon Types Store', () => {
         });
     });
 
-    describe('Pokemon Reducer', () => {
+    describe('Pokemon Types Reducer', () => {
         it('Should return the initial state', () => {
             const state = reducer(undefined, { type: 'POTATO' });
 
