@@ -63,6 +63,20 @@ const Pokemon: React.FC<PokemonProps> = ({ pokemon: { data } }) => {
     );
 };
 
+Pokemon.propTypes = {
+    pokemon: PropTypes.shape({
+        isLoading : PropTypes.bool.isRequired,
+        error     : PropTypes.string,
+        data      : PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            height: PropTypes.number.isRequired,
+            types: PropTypes.arrayOf(PropTypes.any).isRequired,
+            stats: PropTypes.arrayOf(PropTypes.any).isRequired,
+        }),
+    }).isRequired
+};
+
 const PokemonRenderer: React.FC<PokemonProps> = (props) => {
     const { pokemon: { isLoading, error, data }, fetch, match } = props;
     const id = match ? +match.params.id : -1;
@@ -107,18 +121,9 @@ const mapStateToProps = (state: InitialState) => {
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ fetch }, dispatch);
 
 PokemonRenderer.propTypes = {
-    fetch: PropTypes.func.isRequired,
-    pokemon : PropTypes.shape({
-        isLoading : PropTypes.bool.isRequired,
-        error     : PropTypes.string,
-        data      : PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            height: PropTypes.number.isRequired,
-            types: PropTypes.arrayOf(PropTypes.any).isRequired,
-            stats: PropTypes.arrayOf(PropTypes.any).isRequired,
-        }),
-    }).isRequired,
+    fetch   : PropTypes.func.isRequired,
+    pokemon : Pokemon.propTypes.pokemon,
+    match   : PropTypes.any.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonRenderer);
