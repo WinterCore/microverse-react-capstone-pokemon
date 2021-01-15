@@ -1,4 +1,5 @@
 import React                            from 'react';
+import PropTypes                        from 'prop-types';
 import classnames                       from 'classnames';
 import { Link }                         from 'react-router-dom';
 import { connect }                      from 'react-redux';
@@ -67,6 +68,20 @@ type StateProps = RouterRootState & {
 
 type DispatchProps = {
     fetchTypes: () => void;
+};
+
+Filter.propTypes = {
+    fetchTypes : PropTypes.func.isRequired,
+    types      : PropTypes.shape({
+        isLoading : PropTypes.bool.isRequired,
+        error     : PropTypes.string,
+        data      : PropTypes.shape({
+            count    : PropTypes.number.isRequired,
+            next     : PropTypes.string,
+            previous : PropTypes.string,
+            results  : PropTypes.arrayOf(PropTypes.any.isRequired).isRequired
+        }),
+    }).isRequired,
 };
 
 type FilterProps = Props & StateProps & DispatchProps;

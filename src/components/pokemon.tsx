@@ -1,4 +1,5 @@
 import { createMatchSelector, RouterRootState } from 'connected-react-router';
+import PropTypes                                from 'prop-types';
 import React                                    from 'react';
 import { bindActionCreators, Dispatch }         from 'redux';
 import { connect }                              from 'react-redux';
@@ -104,5 +105,20 @@ const mapStateToProps = (state: InitialState) => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ fetch }, dispatch);
+
+PokemonRenderer.propTypes = {
+    fetch: PropTypes.func.isRequired,
+    pokemon : PropTypes.shape({
+        isLoading : PropTypes.bool.isRequired,
+        error     : PropTypes.string,
+        data      : PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            name: PropTypes.string.isRequired,
+            height: PropTypes.number.isRequired,
+            types: PropTypes.arrayOf(PropTypes.any).isRequired,
+            stats: PropTypes.arrayOf(PropTypes.any).isRequired,
+        }),
+    }).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonRenderer);

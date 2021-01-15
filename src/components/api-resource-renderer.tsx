@@ -1,4 +1,5 @@
-import React from 'react';
+import React     from 'react';
+import PropTypes from 'prop-types';
 
 import Loader from './loader';
 
@@ -21,11 +22,23 @@ const ApiResourceRenderer: React.FC<ApiResourceRendererProps> = ({ isLoading, lo
 };
 
 type ApiResourceRendererProps = {
-    isLoading   : boolean;
-    loaderWidth : string | number;
-    error       : string | null;
-    empty       : boolean;
-    render      : () => React.ReactElement | null;
+    isLoading    : boolean;
+    loaderWidth  : string | number;
+    error       ?: string | null;
+    empty        : boolean;
+    render       : () => React.ReactElement | null;
 };
+
+ApiResourceRenderer.propTypes = {
+    isLoading   : PropTypes.bool.isRequired,
+    error       : PropTypes.string,
+    empty       : PropTypes.bool.isRequired,
+    render      : PropTypes.func.isRequired,
+    loaderWidth : PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]).isRequired,
+};
+
 
 export default ApiResourceRenderer;

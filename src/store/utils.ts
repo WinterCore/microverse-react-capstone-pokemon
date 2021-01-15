@@ -8,7 +8,7 @@ export const createAction =
 
 
 export type ApiResourceState<T> = {
-    isLoading : boolean;
-    error     : string | null;
-    data      : T | null;
+    isLoading  : boolean;
+    error     ?: string | null;
+    data      ?: T | null;
 };

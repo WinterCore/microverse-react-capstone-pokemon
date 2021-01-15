@@ -1,4 +1,5 @@
-import React from 'react';
+import React     from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './loader.module.css';
 
@@ -27,6 +28,11 @@ const Loader: React.FC<LoaderProps> = ({ color = '#FDCD5E', width = '100%' }) =>
 type LoaderProps = {
     color ?: string;
     width ?: number | string;
-}
+};
+
+Loader.propTypes = {
+    color : PropTypes.string,
+    width : PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
 
 export default Loader;

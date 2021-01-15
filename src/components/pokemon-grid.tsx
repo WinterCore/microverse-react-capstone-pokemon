@@ -1,4 +1,5 @@
 import React                            from 'react';
+import PropTypes                        from 'prop-types';
 import { connect }                      from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { RouterRootState }              from 'connected-react-router';
@@ -61,5 +62,19 @@ const mapStateToProps = (state: InitialState) => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ fetchType: fetch }, dispatch);
+
+PokemonGrid.propTypes = {
+    fetchType : PropTypes.func.isRequired,
+    filter    : PropTypes.shape({ sort: PropTypes.number.isRequired }).isRequired,
+    type      : PropTypes.shape({
+        isLoading : PropTypes.bool.isRequired,
+        error     : PropTypes.string,
+        data      : PropTypes.shape({
+            id      : PropTypes.number.isRequired,
+            name    : PropTypes.string.isRequired,
+            pokemon : PropTypes.arrayOf(PropTypes.any.isRequired).isRequired,
+        }),
+    }).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonGrid);

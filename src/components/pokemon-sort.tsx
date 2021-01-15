@@ -1,4 +1,5 @@
 import React                            from 'react';
+import PropTypes                        from 'prop-types';
 import classnames                       from 'classnames';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect }                      from 'react-redux';
@@ -37,5 +38,10 @@ type PokemonSortProps = Props & StateProps & DispatchProps;
 const mapStateToProps = (state: InitialState) => ({ filter: state.filter.sort });
 
 const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({ changeSort }, dispatch);
+
+PokemonSort.propTypes = {
+    changeSort: PropTypes.func.isRequired,
+    filter: PropTypes.number.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonSort);

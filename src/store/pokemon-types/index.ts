@@ -5,7 +5,7 @@ import { ApiResourceState }                    from '../utils';
 
 import { FETCH_POKEMON_TYPES, FETCH_POKEMON_TYPES_ERROR, FETCH_POKEMON_TYPES_SUCCESS, ActionUnion } from './actions';
 
-export type PokemonTypesState = ApiResourceState<PaginatedResource<NamedApiResource[]>  | null> ;
+export type PokemonTypesState = ApiResourceState<PaginatedResource<NamedApiResource[]>  | null>;
 
 export const INITIAL_STATE: PokemonTypesState = {
     data      : null,
