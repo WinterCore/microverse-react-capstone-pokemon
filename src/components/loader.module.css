@@ -1,0 +1,10 @@
+.loaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  display: block;
+  margin: 20px 0;
+}
