@@ -1,0 +1,34 @@
+.descriptionBar {
+  width: 100%;
+  background: #339a99;
+  color: #fff;
+}
+
+.topHeader {
+  padding: 8px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  padding-left: 130px;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+.sign {
+  background: #de6c51;
+  width: 120px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 140px;
+  padding: 0 20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.signText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-top: 5px;
+}
